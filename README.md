@@ -1,4 +1,4 @@
-# Update 19.08.2019 - Solution/Workaround
+# Update August 19, 2019 - Solution/Workaround
 Since logging this issue I found a solution/workaround by using the `systemLayoutSizeFitting(_:withHorizontalFittingPriority:verticalFittingPriority:)` method. It still looks that there is an issue in iOS 13 with `systemLayoutSizeFitting` of a `UICollectionViewCell` because this method is no longer being called as it is on iOS 13 and lower. Now you have to override the [systemLayoutSizeFitting(_:withHorizontalFittingPriority:verticalFittingPriority:)](https://developer.apple.com/documentation/uikit/uiview/1622623-systemlayoutsizefitting) method of an `UICollectionViewCell` and use it as you used to use the `systemLayoutSizeFitting`.
 
 Code example:
