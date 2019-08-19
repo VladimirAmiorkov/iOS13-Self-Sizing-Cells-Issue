@@ -27,7 +27,13 @@ class FlickPhotoCell: UICollectionViewCell {
         self.backgroundColor = UIColor.blue
     }
     
+    // Only this is called on iOS 12 and lower
     override func systemLayoutSizeFitting(_ targetSize: CGSize) -> CGSize {
+        return CGSize(width: 50, height: 200)
+    }
+    
+    // Only this is called on iOS 13 beta
+    override func systemLayoutSizeFitting(_ targetSize: CGSize, withHorizontalFittingPriority horizontalFittingPriority: UILayoutPriority, verticalFittingPriority: UILayoutPriority) -> CGSize {
         return CGSize(width: 50, height: 200)
     }
 }
